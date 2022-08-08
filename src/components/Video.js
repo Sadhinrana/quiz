@@ -1,9 +1,10 @@
 import Classes from "../styles/Video.module.css";
 import image from "../assets/images/3.jpg";
+import {Link} from "react-router-dom";
 
 export default function Video() {
     return (
-        <a href="quiz.html"
+        <Link to="/quiz"
         >
             <div className={Classes.video}>
                 <img src={image} alt=""/>
@@ -13,6 +14,6 @@ export default function Video() {
                     <p>Score : Not taken yet</p>
                 </div>
             </div>
-        </a>
+        </Link>
     );
 }
