@@ -7,6 +7,7 @@ import {
     signOut,
     updateProfile
 } from "firebase/auth";
+import "../firebase";
 
 const AuthContext = React.createContext();
 
