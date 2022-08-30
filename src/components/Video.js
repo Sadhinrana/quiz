@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default function Video({title, id, noq}) {
     return (
         noq ?
-            <Link to="/quiz"
+            <Link to={`/quiz/${id}`}
             >
                 <div className={Classes.video}>
                     <img src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={title}/>
