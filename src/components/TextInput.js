@@ -1,6 +1,6 @@
 import Classes from "../styles/TextInput.module.css";
 
-export default function Form({icon, ...rest}) {
+export default function TextInput({icon, ...rest}) {
     return (
         <div className={Classes.textInput}>
             <input {...rest}/>

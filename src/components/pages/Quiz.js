@@ -74,12 +74,7 @@ export default function Quiz() {
             [id]: qna
         });
 
-        navigate.push({
-            pathname: `result/${id}`,
-            state: {
-                qna
-            }
-        });
+        navigate(`/result/${id}`, {state: qna});
     }
 
     const percentage = questions.length ? ((currentQuestion + 1) / questions.length * 100) : 0;
@@ -94,13 +89,15 @@ export default function Quiz() {
                         <h1>{qna[currentQuestion].title}</h1>
                         <h4>Question can have multiple answers</h4>
                         <Answers
+                            input={true}
                             options={qna[currentQuestion].options}
                             handleChange={handleAnswerChange}
                         />
-                        <ProgressBar prev={prevQuestion}
-                                     next={nextQuestion}
-                                     progress={percentage}
-                                     submit={submit}
+                        <ProgressBar
+                            prev={prevQuestion}
+                            next={nextQuestion}
+                            progress={percentage}
+                            submit={submit}
                         />
                         <MiniPlayer/>
                     </>
