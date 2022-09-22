@@ -27,7 +27,7 @@ export default function useAnswers(videoId) {
                 const snapshot = await get(answerQuery);
                 setLoading(false);
                 if (snapshot.exists()) {
-                    setAnswers(prevQuestions => [...prevQuestions, ...Object.values(snapshot.val())]);
+                    setAnswers(prevAnswers => [...prevAnswers, ...Object.values(snapshot.val())]);
                 }
             } catch (e) {
                 setLoading(false);

@@ -9,7 +9,7 @@ export default function Result() {
     const {loading, error, answers} = useAnswers(id);
     const location = useLocation();
     const qna = location.state;
-    
+
     const calculateScore = () => {
         let score = 0;
 
@@ -40,7 +40,10 @@ export default function Result() {
             {
                 !loading && !error && qna && qna.length && (
                     <>
-                        <Summary score={calculateScore()} noq={answers.length} />
+                        <Summary
+                            score={calculateScore()}
+                            noq={answers.length}
+                        />
                         <Analysis answers={answers} />
                     </>
                 )

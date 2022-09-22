@@ -5,6 +5,7 @@ export default function Video({title, id, noq}) {
     return (
         noq ?
             <Link to={`/quiz/${id}`}
+                  state={{title: title}}
             >
                 <div className={Classes.video}>
                     <img src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={title}/>
